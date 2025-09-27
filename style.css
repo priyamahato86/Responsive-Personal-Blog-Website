@@ -1,0 +1,389 @@
+/* Google Fonts */
+/* Used Merriweather for headings and Lato for body text */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+/* --- Base Styles --- */
+:root {
+    --color-primary: #2c3e50; /* Dark Blue/Grey */
+    --color-secondary: #3498db; /* Bright Blue */
+    --color-accent: #e74c3c; /* Red for actions/highlights */
+    --color-text-dark: #34495e; /* Slightly lighter dark text */
+    --color-text-light: #7f8c8d; /* Grey text */
+    --color-background-light: #ecf0f1; /* Light grey background */
+    --color-white: #ffffff;
+    --color-border: #dcdcdc;
+
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* --- Header --- */
+.site-header {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.site-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+}
+
+.site-title a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav .nav-link {
+    color: var(--color-white);
+    font-weight: 700;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.main-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.main-nav .nav-link:hover::after,
+.main-nav .nav-link.active::after {
+    width: 100%;
+}
+
+
+/* --- Main Content --- */
+.site-main {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2rem;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: 2px;
+}
+
+/* Card Style for sections and posts */
+.card {
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* --- Post Form --- */
+.blog-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.blog-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.blog-form input[type="text"],
+.blog-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-form input[type="text"]:focus,
+.blog-form textarea:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.blog-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9; /* Darker blue */
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--color-text-light);
+    color: var(--color-white);
+    margin-left: var(--spacing-sm); /* Spacing between primary and secondary button */
+}
+
+.btn-secondary:hover {
+    background-color: #6c7a89;
+}
+
+/* --- Post List --- */
+.post-card {
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.post-card-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+}
+
+.post-card-title a {
+    color: var(--color-primary);
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-excerpt {
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.post-actions {
+    text-align: right;
+}
+
+.post-actions .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-edit {
+    background-color: #f39c12; /* Orange */
+    color: var(--color-white);
+}
+.btn-edit:hover {
+    background-color: #e67e22;
+}
+
+.btn-delete {
+    background-color: var(--color-accent); /* Red */
+    color: var(--color-white);
+    margin-left: var(--spacing-sm);
+}
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.no-posts-message {
+    text-align: center;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: var(--spacing-lg);
+}
+/* Initially hide the message, JS will show if no posts */
+.no-posts-message p {
+    display: none;
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background: var(--color-primary);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav {
+        margin-top: var(--spacing-sm);
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    .site-title {
+        font-size: 1.5rem;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    .site-main {
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+    .card {
+        padding: var(--spacing-md);
+    }
+    .blog-form .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+        margin-left: 0; /* Remove margin for stacked buttons */
+    }
+    /* Ensure buttons stack properly */
+    .blog-form .btn + .btn {
+        margin-left: 0;
+    }
+}
+
+/* --- About Page Styles --- */
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Aligns text to the top of the image */
+    gap: var(--spacing-lg);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Prevents image stretching */
+    border: 5px solid var(--color-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text h3 {
+    margin-top: 0;
+    color: var(--color-secondary);
+}
+
+/* --- Contact Page Styles --- */
+.section-subtitle {
+    text-align: center;
+    max-width: 500px;
+    margin: -1rem auto 2rem;
+    color: var(--color-text-light);
+}
+
+/* --- Responsive adjustments for new pages --- */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks image on top of text */
+        align-items: center;   /* Centers the image */
+        text-align: center;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Chronicle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title"><a href="#">The Digital Chronicle</a></h1>
+            <nav class="main-nav">
+    <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section id="post-form" class="card post-form-section">
+            <h2 class="section-title">Share Your Thoughts</h2>
+            <form id="blogForm" class="blog-form">
+                <input type="hidden" id="editIndex">
+                <div class="form-group">
+                    <label for="title">Post Title</label>
+                    <input type="text" id="title" placeholder="A compelling title for your post" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author Name</label>
+                    <input type="text" id="author" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Post Content</label>
+                    <textarea id="content" placeholder="Write your amazing content here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Post</button>
+                <button type="button" id="cancelEdit" class="btn btn-secondary" style="display:none;">Cancel Edit</button>
+            </form>
+        </section>
+
+        <section id="posts-container" class="posts-list-section">
+            <h2 class="section-title">Latest Posts</h2>
+            <div class="no-posts-message">
+                <p>No posts yet. Be the first to share something!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 The Digital Chronicle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
